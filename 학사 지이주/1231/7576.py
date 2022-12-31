@@ -1,8 +1,9 @@
 # 7576 토마토
-
-def bfs(i,j):
+from collections import deque
+import sys
+def bfs():
     while q:
-        x,y = q.pop(0)
+        x,y = q.popleft()
         for d in range(4):
             nx = x+dx[d]
             ny = y+dy[d]
@@ -11,12 +12,12 @@ def bfs(i,j):
                 q.append((nx,ny))
 
 M , N = map(int,input().split())
-data = [list(map(int,input().split())) for _ in range(N)]
+data = [list(map(int,sys.stdin.readline().split())) for _ in range(N)]
 
 dx = [-1,1,0,0]
 dy = [0,0,-1,1]
 
-q = []
+q = deque()
 for i in range(N):
     for j in range(M):
         if data[i][j]==1:
@@ -25,16 +26,13 @@ maxv = 0
 temp = 0
 
 
-for i,j in q:
-    bfs(i,j)
-
+bfs()
 for i in data:
     if 0 in i:
         temp=1
+        print(-1)
         break
-if temp:
-    print(-1)
-else:
-    for i in data:
-        maxv = max(maxv,max(i))
+    maxv = max(max(i),maxv)
+if temp==0:
     print(maxv-1)
+
