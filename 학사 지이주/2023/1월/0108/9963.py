@@ -1,10 +1,7 @@
 # 9663 N-Queen
 
 def visit(x,y,visited):
-    check = [[0]*N for _ in range(N)]
-    for i in range(N):
-        for j in range(N):
-            check[i][j]=visited[i][j]
+    check = [a[:] for a in visited]
     for i in range(1,N-x):
         check[x+i][y] = 1
         if 0<= y-i < N:
@@ -17,7 +14,7 @@ def dfs(x,visited):
     global cnt
     for i in range(x,N):
         if sum(visited[x])==N:
-            return
+            return 0
     if x==N-1:
         cnt += N - sum(visited[x])
         return 0
