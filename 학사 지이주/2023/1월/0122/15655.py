@@ -1,4 +1,4 @@
-# 15655 N과M (6)
+# N과M (6)
 
 N,M = map(int,input().split())
 data = list(map(int,input().split()))

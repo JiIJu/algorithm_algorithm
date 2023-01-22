@@ -17,7 +17,7 @@ def reverse(x,y):
 cnt=0
 for i in range(N-2):
     for j in range(M-2):
-        if data_A!=data_B:
+        if data_A[i][j]!=data_B[i][j]:
             reverse(i,j)
             cnt+=1
         if data_A==data_B:

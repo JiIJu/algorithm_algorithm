@@ -16,8 +16,13 @@ for tc in range(T):
             if w:
                 q.append(w.pop())
         elif i=='-':
-            if q:
+            if not q:
+                continue
+            else:
                 q.pop()
         else:
             q.append(i)
-    print(''.join(q)+''.join(reversed(w)))
+    for i in q:
+        print(i,end='')
+    for i in w[::-1]:
+        print(i,end='')
