@@ -15,20 +15,20 @@ for tc in range(T):
             heapq.heappush(minV, (n, i))
             visit[i]=1
         elif I=='D' and n==1:
-            while maxV and not maxV[0][1]:
+            while maxV and not visit[maxV[0][1]]:
                 heapq.heappop(maxV)
             if maxV:
                 visit[maxV[0][1]]=0
                 heapq.heappop(maxV)
         elif I=='D' and n==-1:
-            while minV and not minV[0][1]:
+            while minV and not visit[minV[0][1]]:
                 heapq.heappop(minV)
             if minV:
                 visit[minV[0][1]]=0
                 heapq.heappop(minV)
-    if maxV and visit[maxV[0][1]]==0:
+    while maxV and visit[maxV[0][1]]==0:
         heapq.heappop(maxV)
-    if minV and visit[minV[0][1]]==0:
+    while minV and visit[minV[0][1]]==0:
         heapq.heappop(minV)
     if minV and maxV:
         print(-maxV[0][0],minV[0][0])
