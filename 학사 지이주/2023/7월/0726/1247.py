@@ -1,10 +1,10 @@
-# swea 1247 최적경
+# swea 1247 최적경로
 def dfs(now,check,visit):
     global minv
     if check>=minv:
         return
     if sum(visit)==N:
-        maxv = min(minv,check + abs(now[0]-home[0])+abs(now[1]-home[1]))
+        minv = min(minv,check + abs(now[0]-home[0])+abs(now[1]-home[1]))
         return
     for i in range(N):
         if not visit[i]:
