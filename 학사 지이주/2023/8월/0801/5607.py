@@ -17,7 +17,6 @@ for tc in range(1,T+1):
         fact[i] = (i*fact[i-1])%1234567891
 
 
-
     ans = ((fact[N]%1234567891) * (power((fact[N-R]*fact[R])%1234567891,1234567891-2))%1234567891)%1234567891
     print(f'#{tc} {ans}')
 
