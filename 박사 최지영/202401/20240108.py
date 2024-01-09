@@ -12,4 +12,5 @@ for _ in range(k):
 
 ######
 # 오늘 새롭게 알게된것 f"{ans:.2f}"
+# good job
 ######
